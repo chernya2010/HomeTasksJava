@@ -6,6 +6,6 @@ public class NewClass {
         String name;
         Console con = System.console();
         name = con.readLine("Please, enter your name: ");
-        System.out.println("Welcome to Java, " + name);
+        System.out.println("Welcome to Java, " + name); //добавил коммментарий
     }
 }
