@@ -18,6 +18,7 @@ public class Exercise3 {
         boolean j = false ^ true;
         boolean k = true ^ false;
         boolean l = true ^ true;
-        System.out.println(x1 + "\n" + x + "\n" + y1 + "\n" + y + "\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e + "\n" + f + "\n" + g + "\n" + h + "\n" + i + "\n" + j + "\n" + k + "\n" + l);
+        System.out.println(x1 + "\n" + x + "\n" + y1 + "\n" + y + "\n" + a + "\n" + b + "\n" + c + "\n" + d + 
+        "\n" + e + "\n" + f + "\n" + g + "\n" + h + "\n" + i + "\n" + j + "\n" + k + "\n" + l);
     }
 }
