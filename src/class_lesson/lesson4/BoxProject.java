@@ -14,8 +14,10 @@ public class BoxProject {
         Box box4 = box3;
 
         box3.height = 1;
-        System.out.println(box3.height);
+        System.out.println(box3.height);//box и box4 ссылаются на один и тот же объект
         System.out.println(box4.height);
+
+        
     }
 
 }
