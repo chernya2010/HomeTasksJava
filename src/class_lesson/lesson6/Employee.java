@@ -14,7 +14,7 @@ public class Employee extends Person {
         super.displayInfo();
         System.out.println("Название компании "+this.company);
         System.out.println("Имя: "+super.getName());
-        System.out.println("Имя: "+super.getSurename());
+        System.out.println("Фамилия: "+super.getSurename());
 
     }
 
