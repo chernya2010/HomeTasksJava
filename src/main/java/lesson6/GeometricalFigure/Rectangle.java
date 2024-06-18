@@ -1,5 +1,5 @@
-package class_lesson.Practice;
-
+package main.java.lesson6.GeometricalFigure;
+//Создайте класс Rectangle и наследуйте его от GeomerticalFigure. Добавьте в него поля double width и double height.
 public class Rectangle extends GeometricalFigure{
     private double width;
     private double height;
@@ -19,27 +19,29 @@ public class Rectangle extends GeometricalFigure{
     public void setHeight(double height) {
         this.height = height;
     }
+    //Переопределите метод printInformation для класса Rectangle.
     @Override
     public void printInformation(){
-        System.out.println("ПРИЯМОУГОЛЬНИК");
+        System.out.println("Тип фигуры: " + getFigureType());
         System.out.println("Ширина: " + width);
         System.out.println("Высота: " + height);
+        System.out.println("Площадь прямоугольника: " + getArea());
     }
 
-    public Rectangle(Point center, double width, double height){
-        super(center);
+    public Rectangle(Point centre, double width, double height){
+        super(centre);
         this.width = width;
         this.height = height;
     }
 
     @Override
     public String getFigureType() {
-        return "";//тип фигуры
+        return "Прямоугольник";//тип фигуры
     }
 
     @Override
     public double getArea() {
-        return 0;//площадь
+        return width * height;//площадь
     }
 
     @Override
@@ -49,6 +51,6 @@ public class Rectangle extends GeometricalFigure{
 
     @Override
     public boolean containsPoint(Point point) {
-        return false;//написать логику, которая будет проверять принадлежит ли точка объекту
+        return false;
     }
 }

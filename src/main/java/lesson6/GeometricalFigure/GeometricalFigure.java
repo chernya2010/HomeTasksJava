@@ -1,5 +1,5 @@
-package class_lesson.Practice;
-
+package main.java.lesson6.GeometricalFigure;
+//Создайте класс GeometricalFigure с полем center типа Point.
 public abstract class GeometricalFigure {
     private Point center;
 
@@ -14,7 +14,7 @@ public abstract class GeometricalFigure {
     public void setCenter(Point center) {
         this.center = center;
     }
-
+    //Добавьте в класс GeometricalFigure метод printInformation(), который будет выводить информацию о фигуре в общем.
     public void printInformation(){
         System.out.println("КАКАЯ-ТО ФИГУРА");
         System.out.println("Координата x: " + getCenter().getX());
