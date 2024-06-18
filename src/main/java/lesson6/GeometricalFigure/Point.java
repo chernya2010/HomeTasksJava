@@ -1,5 +1,5 @@
-package class_lesson.Practice;
-
+package main.java.lesson6.GeometricalFigure;
+//Создайте класс Point с полями (координатами) double x, double y.
 public class Point {
 
     private double x;

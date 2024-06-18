@@ -14,5 +14,12 @@ public class Main {
 
         Direction direction = Direction.UP;
         System.out.println(direction.opposite());
+
+        DayOfWeekEnum dayOfWeekEnum = DayOfWeekEnum.SATURDAY;
+        int number = DayOfWeekEnum.MONDAY.getNumberByName("Понедельник");
+        System.out.println(number);
+
+        Type type = Type.INTEGER;
+        System.out.println(type.parse("1"));
     }
 }
