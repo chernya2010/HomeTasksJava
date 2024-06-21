@@ -11,27 +11,24 @@ public class Run {
         Среди 3-х роботов найдите самого дорогого.
         */
         RobotSony robotSony = new RobotSony(new SonyHead(100), new SamsungHand(200), new ToshibaLeg(300));
-        System.out.println("Это робот " + robotSony.getName());
+        System.out.println(robotSony);
         robotSony.action();
-        System.out.println("Модель " + robotSony.getName() + " стоит: " + robotSony.getPrice());
         System.out.println("--------------------------------------------------------------------------------------------");
         RobotSamsung robotSamsung = new RobotSamsung(new SamsungHead(100), new ToshibaHand(20), new SonyLeg(30));
-        System.out.println("Это робот " + robotSamsung.getName());
+        System.out.println(robotSamsung);
         robotSamsung.action();
-        System.out.println("Модель " + robotSamsung.getName() + " стоит: " + robotSamsung.getPrice());
         System.out.println("--------------------------------------------------------------------------------------------");
         RobotToshiba robotToshiba = new RobotToshiba(new ToshibaHead(1), new SonyHand(2), new SamsungLeg(3));
-        System.out.println("Это робот " + robotToshiba.getName());
+        System.out.println(robotToshiba);
         robotToshiba.action();
-        System.out.println("Модель " + robotToshiba.getName() + " стоит: " + robotToshiba.getPrice());
         int largestInt = Math.max(robotSony.getPrice(), Math.max(robotToshiba.getPrice(), robotSamsung.getPrice()));
         System.out.println("--------------------------------------------------------------------------------------------");
         if (largestInt == robotSamsung.getPrice()){
-            System.out.println("Самый дорогой робот: " + robotSamsung.getName());
+            System.out.println("Самый дорогой робот: " + robotSamsung);
         } else if (largestInt == robotSony.getPrice()) {
-            System.out.println("Самый дорогой робот: " + robotSony.getName());
+            System.out.println("Самый дорогой робот: " + robotSony);
         } else if (largestInt == robotToshiba.getPrice()) {
-            System.out.println("Самый дорогой робот: " + robotToshiba.getName());
+            System.out.println("Самый дорогой робот: " + robotToshiba);
         }
 
     }

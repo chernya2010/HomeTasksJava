@@ -25,7 +25,7 @@ public class RobotSamsung implements IRobot{
     }
 
     @Override
-    public String getName() {
-        return "RobotSamsung";
+    public String toString() {
+        return "RobotSamsung{" + "Цена робота: " + getPrice() + "}";
     }
 }
