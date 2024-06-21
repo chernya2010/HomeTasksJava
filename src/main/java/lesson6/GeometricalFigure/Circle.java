@@ -17,6 +17,7 @@ public class Circle extends GeometricalFigure{
         System.out.println("Координата x: " + super.getCenter().getX());
         System.out.println("Координата y: " + super.getCenter().getY());
         System.out.println("Радиус: " + this.radius);
+
     }
 
     public Circle(Point center, double radius){
@@ -25,8 +26,9 @@ public class Circle extends GeometricalFigure{
     }
 
     public Circle(){
-
     }
+
+
 
     @Override
     public String getFigureType() {
@@ -45,8 +47,13 @@ public class Circle extends GeometricalFigure{
 
     @Override
     public boolean containsPoint(Point point) {
-        return false;
+        double x = Math.pow((point.getX() - getCenter().getX()), 2);
+        double y = Math.pow((point.getY() - getCenter().getY()), 2);
+        double R = Math.pow(getRadius(), 2);
+        if (x + y <= R) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
-
 }

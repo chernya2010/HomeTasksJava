@@ -6,9 +6,6 @@ public class Square extends Rectangle{
         super(centre, width, height);
 
     }
-
-    public Square() {
-
     }
 
     @Override
@@ -16,6 +13,7 @@ public class Square extends Rectangle{
         System.out.println("Тип фигуры: " + getFigureType());
         System.out.println("Высота стороны квадрата: " + getHeight());
         System.out.println("Площадь квадрата: "+ getArea());
+        System.out.println("Периметр квадрата: " + getPerimeter());
     }
 
     @Override
@@ -30,11 +28,16 @@ public class Square extends Rectangle{
 
     @Override
     public double getPerimeter() {
-        return 0;//периметр
+        double per = getHeight()*4;
+        return per;//периметр
     }
 
     @Override
     public boolean containsPoint(Point point) {
-        return false;
+        if((point.getX() <= getCenter().getX()*2) && ((point.getY() <= getCenter().getY()*2))){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

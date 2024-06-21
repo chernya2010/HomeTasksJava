@@ -30,11 +30,17 @@ public class Rectangle extends GeometricalFigure{
         System.out.println("Ширина: " + width);
         System.out.println("Высота: " + height);
         System.out.println("Площадь прямоугольника: " + getArea());
+        System.out.println("Периметр прямоугольника: " + getPerimeter());
     }
 
-    public Rectangle(Point centre, double width, double height){
-        super(centre);
+    public Rectangle(Point center, double width, double height){
+        super(center);
         this.width = width;
+        this.height = height;
+    }
+
+    public Rectangle(Point center, double height){
+        super(center);
         this.height = height;
     }
 
@@ -50,11 +56,16 @@ public class Rectangle extends GeometricalFigure{
 
     @Override
     public double getPerimeter() {
-        return 0;//периметр
+        double per = (width*2) + (height*2);
+        return per;//периметр
     }
 
     @Override
     public boolean containsPoint(Point point) {
-        return false;
+        if((point.getX() <= getCenter().getX()*2) && ((point.getY() <= getCenter().getY()*2))){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
