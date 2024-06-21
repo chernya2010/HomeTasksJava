@@ -7,6 +7,10 @@ public class Square extends Rectangle{
 
     }
 
+    public Square() {
+
+    }
+
     @Override
     public void printInformation(){
         System.out.println("Тип фигуры: " + getFigureType());

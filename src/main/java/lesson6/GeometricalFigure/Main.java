@@ -21,5 +21,22 @@ public class Main {
         square.getHeight();
         square.getArea();
         square.printInformation();
+
+        System.out.println(containsCircle(geometricalFigures));
+    }
+
+    static Circle circle1 = new Circle();
+    static Rectangle rectangle1 = new Rectangle();
+    static Square square1 = new Square();
+
+    static GeometricalFigure[] geometricalFigures = new GeometricalFigure[]{circle1, rectangle1, square1};
+
+    public static boolean containsCircle(GeometricalFigure... geometricalFigures) {
+        for (GeometricalFigure fig : geometricalFigures){
+            if (fig instanceof Circle){
+                return true;
+            }
+        }
+        return false;
     }
 }
