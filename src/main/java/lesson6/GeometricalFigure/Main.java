@@ -24,7 +24,5 @@ public class Main {
         Square square = new Square(squareCenter, 4);
         square.setCenter(squareCenter);
         square.printInformation();
-        System.out.println("Содержит точку: " + square.containsPoint(pointForSquare));
-        System.out.println("-----------------------------------------------------");
     }
 }

@@ -4,6 +4,10 @@ public class Rectangle extends GeometricalFigure{
     private double width;
     private double height;
 
+    public Rectangle() {
+
+    }
+
     public double getWidth() {
         return width;
     }

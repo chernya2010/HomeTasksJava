@@ -6,9 +6,6 @@ public class Square extends Rectangle{
         super(centre, width, height);
 
     }
-
-    public Square(Point center, double height){
-        super(center, height);
     }
 
     @Override
