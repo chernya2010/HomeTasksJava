@@ -5,6 +5,4 @@ public interface IRobot {
     void action();
 
     int getPrice();
-
-    String getName();
 }
