@@ -2,10 +2,11 @@ package main.java.lesson6.GeometricalFigure;
 
 public class Square extends Rectangle{
 
-    public Square(Point centre, double width, double height) {
-        super(centre, width, height);
-
+    public Square(Point center, double height){
+        super(center, height);
     }
+    public Square(){
+
     }
 
     @Override
