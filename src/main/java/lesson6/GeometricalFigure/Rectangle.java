@@ -25,12 +25,13 @@ public class Rectangle extends GeometricalFigure{
     }
     //Переопределите метод printInformation для класса Rectangle.
     @Override
-    public void printInformation(){
+    public boolean printInformation(){
         System.out.println("Тип фигуры: " + getFigureType());
         System.out.println("Ширина: " + width);
         System.out.println("Высота: " + height);
         System.out.println("Площадь прямоугольника: " + getArea());
         System.out.println("Периметр прямоугольника: " + getPerimeter());
+        return false;
     }
 
     public Rectangle(Point center, double width, double height){
@@ -45,8 +46,8 @@ public class Rectangle extends GeometricalFigure{
     }
 
     @Override
-    public String getFigureType() {
-        return "Прямоугольник";//тип фигуры
+    public FigureType getFigureType() {
+        return FigureType.RECTANGLE;//тип фигуры
     }
 
     @Override

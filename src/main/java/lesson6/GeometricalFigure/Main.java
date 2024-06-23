@@ -1,5 +1,11 @@
 package main.java.lesson6.GeometricalFigure;
 
+import class_lesson.lesson7.enums.Season;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     //Вывести информацию о всех фигурах в отдельном классе Main в методе main.
     public static void main(String[] args) {
@@ -9,6 +15,12 @@ public class Main {
         circle.setCenter(circleCenter);
         circle.printInformation();
         System.out.println("Содержит точку: " + circle.containsPoint(pointForCircle));
+        System.out.println("-----------------------------------------------------");
+
+        /*В main попробуйте создать переменную типа Printable и записать в неё круг (new Circle(arguments)).
+        Попробуйте вызвать метод printInformation для этой переменной.*/
+        Printable printable = new Circle(pointForCircle, 3);
+        System.out.println(printable.printInformation());
         System.out.println("-----------------------------------------------------");
 
         Point pointForRectangle = new Point(9, 4);
@@ -27,7 +39,10 @@ public class Main {
         System.out.println("Содержит точку: " + square.containsPoint(pointForSquare));
         System.out.println("-----------------------------------------------------");
 
-        System.out.println(containsCircle(geometricalFigures));
+        System.out.println("Содержит круг: " + containsCircle(geometricalFigures));
+        System.out.println("-----------------------------------------------------");
+
+        System.out.println(getNotRoundFigureTypes());
     }
 
     static Circle circle1 = new Circle();
@@ -36,6 +51,9 @@ public class Main {
 
     static GeometricalFigure[] geometricalFigures = new GeometricalFigure[]{circle1, rectangle1, square1};
 
+    /*В классе с методом main создайте ещё один статический метод: containsCircle,
+    который будет принимать один аргумент типа GeometricalFigure[] и возвращать true,
+    если в массиве фигур есть хотя бы один круг и false, если их нет.*/
     public static boolean containsCircle(GeometricalFigure... geometricalFigures) {
         for (GeometricalFigure fig : geometricalFigures){
             if (fig instanceof Circle){
@@ -43,5 +61,19 @@ public class Main {
             }
         }
         return false;
+    }
+
+    /*В классе Main добавьте метод getNotRoundFigureTypes(),
+    который пройдёт циклом по всем значениям FigureType и вернёт массив
+    только из тех, в которых round имеет значение false.*/
+    public static List<String> getNotRoundFigureTypes(){
+        FigureType[] possibleValues = FigureType.values();
+        List<String> enumList = new ArrayList<String>();
+        for(FigureType type : FigureType.values()){
+            if (type.isRound() == false) {
+                enumList.add(String.valueOf(possibleValues[type.ordinal()]));
+            }
+        }
+        return enumList;
     }
 }
