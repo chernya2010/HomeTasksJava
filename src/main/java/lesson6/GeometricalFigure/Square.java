@@ -10,16 +10,17 @@ public class Square extends Rectangle{
     }
 
     @Override
-    public void printInformation(){
+    public boolean printInformation(){
         System.out.println("Тип фигуры: " + getFigureType());
         System.out.println("Высота стороны квадрата: " + getHeight());
         System.out.println("Площадь квадрата: "+ getArea());
         System.out.println("Периметр квадрата: " + getPerimeter());
+        return false;
     }
 
     @Override
-    public String getFigureType() {
-        return "Квадрат";//тип фигуры
+    public FigureType getFigureType() {
+        return FigureType.SQUARE;//тип фигуры
     }
 
     @Override

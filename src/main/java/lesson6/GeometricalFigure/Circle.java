@@ -12,12 +12,13 @@ public class Circle extends GeometricalFigure{
     }
     //Добавьте в класс Circle метод printInformation(), который будет выводить координаты центра и радиус круга.
     @Override
-    public void printInformation(){
+    public boolean printInformation(){
         System.out.println("Тип фигуры: " + getFigureType());
         System.out.println("Координата x: " + super.getCenter().getX());
         System.out.println("Координата y: " + super.getCenter().getY());
         System.out.println("Радиус: " + this.radius);
 
+        return false;
     }
 
     public Circle(Point center, double radius){
@@ -29,10 +30,9 @@ public class Circle extends GeometricalFigure{
     }
 
 
-
     @Override
-    public String getFigureType() {
-        return "Круг";
+    public FigureType getFigureType() {
+        return FigureType.CIRCLE;
     }
 
     @Override
