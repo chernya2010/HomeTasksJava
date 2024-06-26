@@ -1,16 +1,6 @@
 package main.java.lesson9.exception;
 
-import java.util.ArrayList;
-
 public class MyException extends Exception{
-    public static void main(String[] args) throws Exception {
-        println("Ошибка из метода println");
-        nullPointer();
-        f();
-//        wrapException(new RuntimeException());
-//        unwrapException(new MyException());
-        generateArrayOutOfBoundsException(1);
-    }
 
     MyException(String message){
         super(message);
@@ -21,10 +11,10 @@ public class MyException extends Exception{
     /*Создайте метод println(String s), который будет выбрасывать
     MyException с параметром s, а потом ловить это исключение и
     выводить параметр s. Выводите перенос строки в секции finally.*/
-    public static void println(String s) throws MyException {
+    public void println(String s) throws MyException {
         try {
             throw new MyException(s);
-        } catch (Exception ex){
+        } catch (MyException ex){
             System.out.println(s);
         } finally {
             System.out.println();
@@ -34,23 +24,22 @@ public class MyException extends Exception{
     инициализировать его null, пытаться вызвать метод у этого объекта,
     ловить NullPointerException и выводить в catch блоке сообщение
     "NullPointerException thrown successfully".*/
-    public static void nullPointer(){
+    public void nullPointer(){
         try {
             String str = null;
             str.length();
         } catch (NullPointerException ex){
             System.out.println("NullPointerException thrown successfully");
-            throw ex;
         }
     }
     /*Создайте методы f() и g(), так чтобы f() вызывал метод g().
     В методе g() выбросите MyException, словите его в методе f(),
     и там же в catch блоке поделите 1 на 0. Проверьте,
     что при вызове этого метода вылетает ArithmeticException.*/
-    public static void g() throws MyException {
-        throw new MyException("Текст ошибки");
+    public void g() throws MyException {
+        throw new RuntimeException(new MyException("Ошибка из метода g()"));
     }
-    public static void f(){
+    public void f(){
         int a = 0;
         try {
             g();
@@ -62,17 +51,19 @@ public class MyException extends Exception{
     /*Создайте метод wrapException(Exception e),
     который будет возвращать RuntimeException,
     созданный с аргументом е в конструкторе.*/
-    public static void wrapException(Exception e){
+    public void wrapException(Exception e){
         throw new RuntimeException(e);
     }
 
     /*Создайте метод unwrapException(Exception e),
      который будет выбрасывать сause исключения e.*/
-    public static void unwrapException(Exception e){
+    public void unwrapException(Exception e){
         try {
-            nullPointer();
-        } catch (Exception ex){
-            throw new RuntimeException("Перехвачено исключение: " + ex);
+            ArithmeticException e2 = new ArithmeticException("ArithmeticException из метода unwrapException");
+            e2.initCause(new NullPointerException("NullPointerException из метода unwrapException"));
+            throw e2;
+        } catch(ArithmeticException e2) {
+            System.out.println(e2.getCause());
         }
     }
 
@@ -80,7 +71,7 @@ public class MyException extends Exception{
     который будет пытаться обратиться к i-му элементу массива
     и выбрасывать исключение, потому что такого элемента в
     массиве нет.*/
-    public static void generateArrayOutOfBoundsException(int i){
+    public void generateArrayOutOfBoundsException(int i){
         int[] m = {i};
         try {
             m[10] = 999;
@@ -88,5 +79,15 @@ public class MyException extends Exception{
             System.out.println("Ошибка! Индекс за пределами массива\n" + exception);
         }
     }
+    /*Создайте метод threesome(), который будет ловить MyException,
+    MyException2 и MyException3 в одном catch блоке.*/
+//    public void threesome() {
+//        try {
+//            String str = null;
+//            str.length();
+//        } catch (MyException | MyException2 | MyException3 ex){
+//            System.out.println("Исключение из метода threesome()");
+//            throw ex;
+//        }
+    }
 
-}
