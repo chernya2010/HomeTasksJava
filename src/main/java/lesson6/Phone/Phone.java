@@ -6,6 +6,9 @@ public class Phone {
     private String model;
     private int weight;
 
+    public Phone(String phone1, String apple, int weight) {
+    }
+
     public int getNumber() {
         return number;
     }
@@ -75,4 +78,7 @@ public class Phone {
         phone1.receiveCall("Александр", 666555);
     }
 
+    public String getCompany() {
+        return "";
+    }
 }
