@@ -19,9 +19,9 @@ public class DateProject {
         String line = scanner.nextLine();
         try {
             date = format.parse(line);
+            System.out.println(format.format(date));
         } catch (ParseException e) {
             System.out.println("Дата не введена либо введён неправильный формат даты.");
         }
-        System.out.println(format.format(date));
     }
 }
